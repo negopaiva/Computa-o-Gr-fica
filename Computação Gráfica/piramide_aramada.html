@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Piramide Aramada</title>
+  </head>  
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+    <script>
+      const scene = new THREE.Scene();
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer();
+      renderer.setClearColor(0x000000);
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+      const geometry = new THREE.ConeGeometry(2, 2, 4);
+      const material = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true});
+      console.log(geometry);
+      const cone = new THREE.Mesh(geometry, material);
+      scene.add(cone);
+      camera.position.z = 8;
+      const animate = function () {
+        requestAnimationFrame(animate);
+        cone.rotation.y += 0.01;
+        renderer.render(scene, camera);
+      };
+      animate();
+    </script>
+  </body>
+</html>

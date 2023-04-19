@@ -1,0 +1,16 @@
+#Box{
+    border-style: groove;
+    margin-top: 20px;
+    text-align: center;
+    font-size: larger;
+    background-color: rgb(214, 214, 253);
+    border-radius: 7px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+
+button:hover{
+
+    background-color: rgb(214, 214, 253);
+}
